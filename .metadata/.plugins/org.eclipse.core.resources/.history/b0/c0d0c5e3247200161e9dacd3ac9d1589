@@ -1,0 +1,20 @@
+
+public class ArrayUsing2Stacks {
+	
+	static int top1, top2, arr[], size=8;
+	
+	ArrayUsing2Stacks()
+	{
+		arr = new int[size];
+		top1 = 0;
+		top2 = size-1;
+	}
+	
+	public static void push1(int data)
+	{
+		if(top1+1==top2)
+			System.out.println("stack is full");
+		arr[top1++] = data;
+	}
+
+}

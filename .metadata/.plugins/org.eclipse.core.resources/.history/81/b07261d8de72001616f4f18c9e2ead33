@@ -1,0 +1,16 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class MaxWidthOfABinaryTree {
+	
+	static Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+	
+	public static void maxWidth(node root, int height)
+	{
+		if(map.containsKey(height))
+		{
+			
+		}
+	}
+
+}

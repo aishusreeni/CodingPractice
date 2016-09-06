@@ -1,0 +1,22 @@
+
+public class BinaryTreeDiamater {
+	
+	public static int height(node root)
+	{
+		if(root==null)
+			return 0;
+		else
+			return Math.max(height(root.left),height(root.right))+1;
+	}
+	
+	public static int findMaxDiameter(node root)
+	{
+		if(root==null)
+			return 0;
+		int lHeight = findMaxDiameter(root.left);
+		int rHeight = findMaxDiameter(root.right);
+		int dia = lHeight+rHeight+2;
+		
+	}
+
+}

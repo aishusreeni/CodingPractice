@@ -1,0 +1,51 @@
+class node {
+	
+	int data;
+	node next,prev;
+	
+	public node(int data)
+	{
+		this.data=data;
+		next=null;
+		prev=null;
+	}
+	
+	public int getData()
+	{
+		return this.data;
+	}
+	
+	public void setData(int data)
+	{
+		this.data=data;
+	}
+	
+	public node getPrev()
+	{
+		return this.prev;
+	}
+	
+	public void setPrev(node n)
+	{
+		this.prev=n;
+	}
+	
+	public node getNext()
+	{
+		return this.next;
+	}
+	
+	public void setNext(node n)
+	{
+		this.next=n;
+	}
+}
+
+public class DLL {
+	
+	node head;
+	int length;
+	
+	DLL
+
+}

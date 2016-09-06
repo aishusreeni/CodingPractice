@@ -1,0 +1,38 @@
+
+public class BuildTreeWithInorderPreOrder {
+	
+	static int preIndex=0;
+	
+	public static node build(node root,String pre, String in)
+	{
+		root = new node(pre.charAt(preIndex));
+		int k=0,length=in.length();
+		System.out.println(length+""+in);
+		while(k<length)
+		{
+			if(in.charAt(k)==pre.charAt(preIndex))
+				break;
+			k++;
+		}
+		if(length==1)
+		{
+			System.out.println("here");
+			root.left=null;
+			root.right=null;
+			return root;
+		}
+		preIndex++;
+		System.out.println(in);
+		root.left=build(null,pre,in.substring(0,k));
+		System.out.println(in.substring(k+1,length-1);
+		root.right=build(null,pre,in.substring(k+1,length-1));
+		return root;	
+	}
+	
+	public static void main(String[] args)
+	{
+		System.out.println(build(null,"ABDECF","DBEAFC"));
+	}
+}
+
+

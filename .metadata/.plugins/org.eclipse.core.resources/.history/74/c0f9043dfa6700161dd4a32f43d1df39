@@ -1,0 +1,23 @@
+
+public class RemoveUnnecessarySpacesInASentence {
+	
+	public static void remove(String str)
+	{
+		StringBuilder res = new StringBuilder();
+		int length = str.length();
+		while(i<length)
+		{
+			if(str.charAt(i)!=" ")
+			{
+				res.append(str.charAt(i));
+				++i;
+			}
+			else
+			{
+				while(str.charAt(i)==" ")
+					i++;
+			}
+		}
+	}
+
+}

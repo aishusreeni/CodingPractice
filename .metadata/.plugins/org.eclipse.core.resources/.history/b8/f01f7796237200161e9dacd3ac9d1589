@@ -1,0 +1,45 @@
+
+public class node {
+	//int data;
+	char data ;
+	node left;
+	node right;
+	
+	node(char data)//int data)
+	{
+		this.data=data;
+		this.left=null;
+		this.right=null;
+	}
+	
+	public char/*int*/ getData()
+	{
+		return this.data;
+	}
+	
+	public void setData()
+	{
+		this.data=data;
+	}
+	
+	public node getLeftChild()
+	{
+		return this.left;
+	}
+	
+	public void setLeftChild(node left)
+	{
+		this.left=left;
+	}
+	
+	public node getRightChild()
+	{
+		return this.right;
+	}
+	
+	public void setRightChild(node right)
+	{
+		this.right=right;
+	}
+
+}

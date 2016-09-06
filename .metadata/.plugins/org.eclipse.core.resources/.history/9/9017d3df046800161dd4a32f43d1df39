@@ -1,0 +1,40 @@
+import java.util.Stack;
+
+public class NextGreaterElement {
+
+	public static void nextGreaterElement(int[] arr)
+	{
+		Stack<Integer> stack = new Stack<Integer>();
+		int length = arr.length;
+		stack.push(arr[0]);
+		int flag=1;
+		for(int i=1;i<length;i++)
+		{
+			if(!stack.isEmpty())
+			{
+				int elt = stack.pop();
+				if(elt<arr[i+1])
+					System.out.println(elt+" "+arr[i+1]);
+				else
+				{
+					int p = i;
+					while(elt>arr[p+1])
+					{
+						p++;
+						if(p+1 == length)
+						{
+							flag=0;
+							break;
+						}
+					}
+					if(flag==1)
+						System.out.println(elt+" "+arr[p+1]);
+					else
+						System.out.println(elt+" "+(-1));
+				}
+			}
+		}
+		System.out.println();
+	}
+	
+}

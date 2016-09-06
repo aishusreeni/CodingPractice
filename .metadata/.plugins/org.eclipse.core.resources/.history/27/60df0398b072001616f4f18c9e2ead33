@@ -1,0 +1,42 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class AllPermutationsOfaString {
+	
+	static Set<String> set = new HashSet<String>();
+	
+	public static void printPermutations(String str, int i, int n)
+	{
+		int j=0;
+		if(i==n)
+		{
+			if(!set.contains(str))
+				set.add(str);
+		}
+		else
+		{
+			for(j=i;j<=n;j++)
+			{
+				char[] ch = str.toCharArray();
+				char temp = ch[i];
+				ch[i] = ch[j];
+				ch[j] = temp;
+				str = new String(ch);
+				printPermutations(str,i+1,n);
+				ch = str.toCharArray();
+				temp = ch[i];
+				ch[i] = ch[j];
+				ch[j] = temp;
+				str = new String(ch);
+			}
+		}
+		System.out.println(set.toString());
+	}
+	
+	public static void main(String[] args)
+	{
+		String str = "abc";
+		printPermutations(str,0,str.length()-1);
+	}
+
+}

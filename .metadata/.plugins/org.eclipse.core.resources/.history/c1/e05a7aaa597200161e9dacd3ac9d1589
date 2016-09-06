@@ -1,0 +1,38 @@
+
+public class InorderSuccessorInABST 
+{
+	public static node searchRight(node n, node rem)
+	{
+		if(n!=null)
+		{
+			node m = searchRight(n.left,n);
+		}
+		return rem;
+	}
+	
+	public static node searchN(node root, node n)
+	{
+		node succ;
+		while(root!=null)
+		{
+			if(n.data<root.data)
+			{
+				succ = root;
+				root=root.left;
+			}
+			else if(n.data>root.data)
+				succ=root.right;
+			else
+				break;
+		}
+		return succ;
+	}
+	
+	public static void inorder(node root, node n)
+	{
+		if(n.right!=null)
+			System.out.println(searchRight(n.right,n));
+		else
+			System.out.println(searchN(root,n));
+	}
+}

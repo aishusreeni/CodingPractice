@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;SumPairElement&apos; to &apos;SumPairInArrayElement&apos;&#x0A;- Original project: &apos;GeeksForGeeks&apos;&#x0A;- Original element: &apos;SumPairElement&apos;&#x0A;- Renamed element: &apos;SumPairInArrayElement&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SumPairElement&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{SumPairElement.java[SumPairElement" matchStrategy="1" name="SumPairInArrayElement" qualified="false" references="true" similarDeclarations="false" stamp="1471232143116" textual="false" version="1.0"/>
+</session>

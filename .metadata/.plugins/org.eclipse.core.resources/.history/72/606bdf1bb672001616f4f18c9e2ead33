@@ -1,0 +1,31 @@
+
+public class AllPermutationsOfaString
+{
+	public static void permutations(char[] ch, int index, int swapindex)
+	{
+		if(index==ch.length)
+		{
+			String newstr = ch.toString();
+			System.out.println(newstr);
+			return;
+		}
+		int length = ch.length;
+		for(int i=0;i<length;i++)
+		{
+			char[] tempch = ch;
+			char temp = tempch[swapindex];
+			tempch[swapindex] = tempch[index];
+			tempch[index] = temp;
+			permutations(ch,index,i);
+			temp = tempch[swapindex];
+			tempch[swapindex] = tempch[index];
+			tempch[index] = temp;
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		char[] ch = {'a','b','c'};
+		permutations(ch,0,0);
+	}
+}

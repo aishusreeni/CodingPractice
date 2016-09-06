@@ -1,0 +1,20 @@
+
+public class BuildTreeWithInorderPreOrder {
+	
+	public static node build(node root, int i, int j, String pre, String in)
+	{
+		root = new node(pre.charAt(i));
+		int k=0,length=in.length();
+		while(k<length)
+		{
+			if(in.charAt(k)==pre.charAt(0))
+				break;
+			k++;
+		}
+		root.left=build(null,0,k,pre.substring(1),in.substring(0,k));
+		root.right=build(null,k+1,length,pre.substring(1),in.substring(k+1,length));
+		return root;	
+	}
+}
+
+

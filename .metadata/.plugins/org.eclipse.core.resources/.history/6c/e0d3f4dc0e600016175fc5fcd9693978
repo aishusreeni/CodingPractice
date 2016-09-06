@@ -1,0 +1,130 @@
+class dllnode {
+	
+	int data;
+	dllnode next,prev;
+	
+	public dllnode(int data)
+	{
+		this.data=data;
+		next=null;
+		prev=null;
+	}
+	
+	public int getData()
+	{
+		return this.data;
+	}
+	
+	public void setData(int data)
+	{
+		this.data=data;
+	}
+	
+	public dllnode getPrev()
+	{
+		return this.prev;
+	}
+	
+	public void setPrev(dllnode n)
+	{
+		this.prev=n;
+	}
+	
+	public dllnode getNext()
+	{
+		return this.next;
+	}
+	
+	public void setNext(dllnode n)
+	{
+		this.next=n;
+	}
+}
+
+public class DLL {
+	
+	dllnode head;
+	int length;
+	
+	DLL()
+	{
+		head=null;
+		length=0;
+	}
+	
+	void traverse()
+	{
+		dllnode temp = head;
+		while(temp!=null)
+		{
+			System.out.print(temp.getData()+" ");
+			temp=temp.getNext();
+		}
+	}
+	
+	void listLength()
+	{
+		System.out.println(length);
+	}
+	
+	void insertFront(int data)
+	{
+		dllnode n = new dllnode(data);
+		n.setNext(head);
+		head=n;
+		++length;
+	}
+	
+	void insertEnd(int data)
+	{
+		dllnode n = new dllnode(data);
+		dllnode temp = head;
+		while(temp.getNext()!=null)
+		{
+			temp=temp.getNext();
+		}
+		temp.setNext(n);
+		n.setPrev(temp);
+		++length;
+	}
+	
+	void insertMiddle(int pos, int data)
+	{
+		if(pos>length)
+			return;
+		dllnode n = new dllnode(data);
+		dllnode temp = head.getNext();
+		dllnode beforeTemp = head;
+		int position=2;
+		while(position!=pos)
+		{
+			temp=temp.getNext();
+			beforeTemp=beforeTemp.getNext();
+			++position;
+		}
+		beforeTemp.setNext(n);
+		n.setPrev(beforeTemp);
+		n.setNext(temp);
+		temp.setPrev(n);
+		++length;
+	}
+	
+	void deleteFront()
+	{
+		head=head.getNext();
+		head.setPrev(null);
+	}
+	
+	void deleteEnd()
+	{
+		dllnode temp = head.getNext();
+		dllnode beforeTemp = head;
+		while(temp.getNext()!=null)
+		{
+			temp=temp.getNext();
+			beforeTemp = beforeTemp.getNext();
+		}
+		beforeTemp.setNext(null);
+	}
+
+}

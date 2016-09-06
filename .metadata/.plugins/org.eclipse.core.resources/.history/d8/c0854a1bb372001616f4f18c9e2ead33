@@ -1,0 +1,22 @@
+
+public class AllPermutationsOfaString
+{
+	public static void permutations(char[] ch, int index, int swapindex)
+	{
+		if(index==ch.length || swapindex==ch.length)
+			return;
+		char[] tempch = ch;
+		char temp = tempch[swapindex];
+		tempch[swapindex] = tempch[index];
+		tempch[index] = temp;
+		String str = new String(tempch);
+		System.out.println(str);
+		permutations(ch,index+1,swapindex+1);
+	}
+	
+	public static void main(String[] args)
+	{
+		char[] ch = {'a','b','c'};
+		permutations(ch,0);
+	}
+}

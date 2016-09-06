@@ -1,0 +1,112 @@
+class node {
+	
+	int data;
+	node next,prev;
+	
+	public node(int data)
+	{
+		this.data=data;
+		next=null;
+		prev=null;
+	}
+	
+	public int getData()
+	{
+		return this.data;
+	}
+	
+	public void setData(int data)
+	{
+		this.data=data;
+	}
+	
+	public node getPrev()
+	{
+		return this.prev;
+	}
+	
+	public void setPrev(node n)
+	{
+		this.prev=n;
+	}
+	
+	public node getNext()
+	{
+		return this.next;
+	}
+	
+	public void setNext(node n)
+	{
+		this.next=n;
+	}
+}
+
+public class DLL {
+	
+	node head;
+	int length;
+	
+	DLL()
+	{
+		head=null;
+		length=0;
+	}
+	
+	void traverse()
+	{
+		node temp = head;
+		while(temp!=null)
+		{
+			System.out.print(temp.getData()+" ");
+			temp=temp.getNext();
+		}
+	}
+	
+	void listLength()
+	{
+		System.out.println(length);
+	}
+	
+	void insertFront(int data)
+	{
+		node n = new node(data);
+		n.setNext(head);
+		head=n;
+		++length;
+	}
+	
+	void insertEnd(int data)
+	{
+		node n = new node(data);
+		node temp = head;
+		while(temp.getNext()!=null)
+		{
+			temp=temp.getNext();
+		}
+		temp.setNext(n);
+		n.setPrev(temp);
+		++length;
+	}
+	
+	void insertMiddle(int pos, int data)
+	{
+		if(pos>length)
+			return;
+		node n = new node(data);
+		node temp = head.getNext();
+		node beforeTemp = head;
+		int position=2;
+		while(position!=pos)
+		{
+			temp=temp.getNext();
+			beforeTemp=beforeTemp.getNext();
+			++position;
+		}
+		beforeTemp.setNext(n);
+		n.setPrev(beforeTemp);
+		n.setNext(temp);
+		temp.setPrev(n);
+		++length;
+	}
+
+}

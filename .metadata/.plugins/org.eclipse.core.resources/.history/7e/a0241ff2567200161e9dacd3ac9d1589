@@ -1,0 +1,19 @@
+
+public class InorderSuccessorInABST 
+{
+	public static void searchRight(node n)
+	{
+		if(n==null)
+			return;
+		searchRight(n.left);
+		System.out.println(min.data);
+	}
+	
+	public static void inorder(node root, node n)
+	{
+		if(n.right!=null)
+			searchRight(n.right);
+		else
+			searchN(root,n);
+	}
+}

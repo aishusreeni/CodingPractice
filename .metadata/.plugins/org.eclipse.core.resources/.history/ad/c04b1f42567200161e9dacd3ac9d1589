@@ -1,0 +1,20 @@
+
+public class InorderSuccessorInABST {
+	
+	public static void inorderSuccessor(node root)
+	{
+		if(root==null)
+			return;
+		if(root.right!=null)
+		{
+			System.out.println(root.right.data);
+			return;
+		}
+		else
+		{
+			inorderSuccessor(root.left);
+		}
+		System.out.println(root.data);
+	}
+
+}

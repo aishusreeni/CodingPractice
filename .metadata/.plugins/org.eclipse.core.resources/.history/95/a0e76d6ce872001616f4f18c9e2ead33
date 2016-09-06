@@ -1,0 +1,21 @@
+
+public class BinarySearchTreeFloorCeiling {
+	
+	public static int findCeiling(node root, int data)
+	{
+		if(root==null)
+			return -1;
+		int l;
+		if(data==root.data)
+			return data;
+		if(data<root.data)
+		{
+			l = findCeiling(root.left,data);
+			return (l>data)?l:root.data;
+		}
+		return findCeiling(root.right,data);
+		
+		
+	}
+
+}
