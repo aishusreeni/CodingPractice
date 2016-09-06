@@ -1,5 +1,6 @@
 
 public class MatrixSpiralForm {
+<<<<<<< HEAD
 	
 	public static void printSpiral(int[][] arr, int m, int n)
 	{
@@ -33,5 +34,7 @@ public class MatrixSpiralForm {
 		int[][] arr = {{1,2,3,4},{10,11,12,5},{9,8,7,6},{5,4,3,2}};
 		printSpiral(arr,3,3);
 	}
+=======
+>>>>>>> f05d141ff277e14d20fa3402d2aa045d258e8a53
 
 }
