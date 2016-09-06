@@ -7,23 +7,23 @@ public class MatrixSpiralForm {
 		while(k<=m && l<=n)
 		{
 			i=k;
-			for(j=l;j<=n;j++)
-				System.out.print(arr[i][j]+ " ");
+			for(j=l;j<n;j++)
+				System.out.println(arr[i][j]);
 			k++;
 			
 			j=n;
-			for(i=k;i<=m;i++)
-				System.out.print(arr[i][j]+" ");
+			for(i=k;i<m;i++)
+				System.out.println(arr[i][j]);
 			n--;
 			
 			i=m;
 			for(j=n;j>=l;j--)
-				System.out.print(arr[i][j]+" ");
+				System.out.println(arr[i][j]);
 			m--;
 			
 			j=l;
 			for(i=m;i>=k;i--)
-				System.out.print(arr[i][j]+" ");
+				System.out.println(arr[i][j]);
 			l++;
 		}
 	}
