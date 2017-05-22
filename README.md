@@ -1,1 +1,1 @@
-# InterviewPrep
+# Coding Practice
